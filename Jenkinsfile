@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     if (params.ENV == "dev" || params.ENV == "test" || params.ENV == "prod") {
-                            withCredentials([file(credentialsId: 'kubernetes_kubeconfig', variable: 'KUBECONFIG')]) {
+                            withCredentials([secretFile(credentialsId: 'kubernetes_kubeconfig', variable: 'KUBECONFIG')]) {
                           sh """
                               export BUILD_NUMBER=\$(cat ../bakehouse-build-number.txt)
                               mv Deployment/deploy.yaml Deployment/deploy.yaml.tmp
