@@ -8,7 +8,7 @@ pipeline {
             steps {
                 script {
                    if (params.ENV == "release") {
-                       withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                       withCredentials([usernamePassword(credentialsId: 'dockerHub_token', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                            sh """
                                 docker login -u $USERNAME -p $PASSWORD
                                 docker build -t kareemelkasaby/itimansbakehouse:${BUILD_NUMBER} .
