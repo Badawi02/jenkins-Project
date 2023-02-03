@@ -1,13 +1,11 @@
 pipeline {
     agent { label 'slave_1' }
-    parameters {
-        choice(name: 'ENV', choices: ['dev', 'test', 'prod',"release"])
-    } 
+
     stages {
         stage('build') {
             steps {
                 script {
-                   if (params.ENV == "release") {
+                   if ($BRANCH_NAME == "release") {
                        withCredentials([usernamePassword(credentialsId: 'dockerHub_token', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                            sh """
                                 docker login -u $USERNAME -p $PASSWORD
@@ -23,7 +21,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    if (params.ENV == "dev" || params.ENV == "test" || params.ENV == "prod") {
+                    if ($BRANCH_NAME == "dev" || $BRANCH_NAME == "main") {
                             withCredentials([file(credentialsId: 'kubernetes_kubeconfig', variable: 'KUBECONFIG')]) {
                           sh """
                               export BUILD_NUMBER=\$(cat ../bakehouse-build-number.txt)
