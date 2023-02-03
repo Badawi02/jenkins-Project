@@ -1,4 +1,3 @@
-
 pipeline {
     agent { label 'slave_1' }
     parameters {
