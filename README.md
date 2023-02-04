@@ -1,5 +1,7 @@
 # Jenkins Project
 
+## Main Points :
+-----------------------------------------------------------------
 * Infrastructure : 1 VPC | 1 Subnet | 1 Enternet-Gateway | Ec2 instance on Subnet
 * Deploy Jenkins in minikube as a pod on ec2 instance
 * install nginx and change configration to work as (reverse proxy) to can hit pods
@@ -8,9 +10,17 @@
 * build and push images on private DockerHub repo at release branche
 * deploy the latest image pushed on dockerHub repo on pod
 
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/1.jpg)
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/2.jpg)
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/3.jpg)
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/4.jpg)
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/5.jpg)
-![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/6.jpg)
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/1.png)
+-----------------------------------------------------------------  
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/2.png)
+-----------------------------------------------------------------
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/3.png)
+-----------------------------------------------------------------
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/4.png)
+-----------------------------------------------------------------
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/5.png)
+-----------------------------------------------------------------
+![agent](https://github.com/Badawi02/jenkins-Project/blob/main/images/6.png)
+-----------------------------------------------------------------
+## Contributors:
+- [Ahmed Badawi](https://github.com/Badawi02)
